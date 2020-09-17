@@ -6,8 +6,8 @@ import TempComponent from './components/TempComponent';
 const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 
 function App() {
-  // console.log(string);
-  console.log(process.env.REACT_APP_CLIENT_ID);
+  console.log(process.env.REACT_APP_KEY);
+  console.log(process.env.REACT_APP_TOKEN);
 
   return (
     <div className="App">

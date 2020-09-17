@@ -2,10 +2,8 @@ import React from 'react';
 
 class TempComponent extends React.Component {
     render() {
-        console.log("I'm in2.");
-
-    
-    return <h1>HI</h1>;
+        // console.log("I'm in2.");
+        return <h1>Hi from TempComponent</h1>;
     }
 }
 
