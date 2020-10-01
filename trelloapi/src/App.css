@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* below is are the styles I've added */
+.section{
+  /* background-color: 1px black solid; */
+  border: 3px pink solid;
+  margin: 3px;
+  padding: 3px;
+}
