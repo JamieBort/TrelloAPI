@@ -1,4 +1,4 @@
-# TrelloAPI
+# README TrelloAPI
 
 ### To Do
 1. ~~Generate a React project~~
@@ -15,6 +15,7 @@
 
 ## Files and Directories
 `.env.development.local` the local environment variables for development.
+
 `.env` the environment variables. Was redundant. It wasn't originally included. It caused confusion. So I removed it.
 
 ## Resources

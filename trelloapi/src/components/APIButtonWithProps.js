@@ -9,7 +9,8 @@ class APIButtonWithProps extends React.Component {
         // console.log(REACT_APP_TOKEN);
         return (
             <div>
-                <button onClick={this.props.apiFetch}>{this.props.message}</button>
+                <button onClick={this.props.theFunction}>{this.props.message}</button>
+                {/* <button onClick={this.props.apiFetch}>{this.props.message}</button> */}
             </div>
         );
     }

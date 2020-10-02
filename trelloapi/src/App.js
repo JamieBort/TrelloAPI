@@ -7,22 +7,12 @@ import List from './components/List';
 
 // const TrelloAPIstring = `https://api.trello.com/1/boards/59eb3c354ef89f2258c24900/cards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
 const AllBoards = `https://api.trello.com/1/members/me/boards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
-// const tempObject = {};
-// var myObj = {
-//   'name': 'Umut',
-//   'age': 34
-// };
-
 
 // function App() {
 class App extends React.Component {
-  
-  
   state = {
     details: [],
   };
-  
-
   // componentDidMount() {console.log("this fires after the component mounts.")};
 
   // console.log(process.env.REACT_APP_KEY);
@@ -35,7 +25,7 @@ class App extends React.Component {
   //   }
   // }
 
-  apiCall = () =>{
+  apiCall = () => {
     axios
       .get(AllBoards)
       .then(response => {
@@ -60,40 +50,40 @@ class App extends React.Component {
 
   }
 
-//   async apiCall = () => {
-//     // async function getDataset() {
-//       var response = await fetch(AllBoards)
-//       // .then(response => console.log(response.json()))
-//       // .then(response => {console.log(response.json());response.json();})
-//       .then(response => response.json())
-//       .then(data => {
-//         console.log(data[0].name);
-//         console.log(data);
-//         // create an array of contacts only with relevant data
-//         // const ABoard = data.map(c => {
-//         //   return {
-//         //     //     id: c.id,
-//         //     name: c.name,
-//         //     //     email: c.email,
-//         //     //     phone: c.phone,
-//         //   };
-//         // });
-//       })
-//       .catch((error) => { console.error('Error:', error) });
-//     // create an array of contacts only with relevant data
-//     // const ABoard = data.map(c => {
-//     //   return {
-//     //     //     id: c.id,
-//     //     name: c.name,
-//     //     //     email: c.email,
-//     //     //     phone: c.phone,
-//     //   };
-//     // });
- 
-//     console.log(response.json()); // this line will "wait" for the previous to be completed
-// //     console.log(getDataset)
-// // }
-//   };
+  //   async apiCall = () => {
+  //     // async function getDataset() {
+  //       var response = await fetch(AllBoards)
+  //       // .then(response => console.log(response.json()))
+  //       // .then(response => {console.log(response.json());response.json();})
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         console.log(data[0].name);
+  //         console.log(data);
+  //         // create an array of contacts only with relevant data
+  //         // const ABoard = data.map(c => {
+  //         //   return {
+  //         //     //     id: c.id,
+  //         //     name: c.name,
+  //         //     //     email: c.email,
+  //         //     //     phone: c.phone,
+  //         //   };
+  //         // });
+  //       })
+  //       .catch((error) => { console.error('Error:', error) });
+  //     // create an array of contacts only with relevant data
+  //     // const ABoard = data.map(c => {
+  //     //   return {
+  //     //     //     id: c.id,
+  //     //     name: c.name,
+  //     //     //     email: c.email,
+  //     //     //     phone: c.phone,
+  //     //   };
+  //     // });
+
+  //     console.log(response.json()); // this line will "wait" for the previous to be completed
+  // //     console.log(getDataset)
+  // // }
+  //   };
 
   // apiCallAllBoards = () => {
   //   fetch(AllBoards)
@@ -148,13 +138,16 @@ class App extends React.Component {
   //     .catch((error) => { console.error('Error:', error) });
   // };
 
+  testFunction=()=>{console.log(this.state)};
+
   render() {
     // console.log(this.state);
     return (
       <div className="App">
+      <APIButtonWithProps message="The current state." theFunction={this.testFunction}></APIButtonWithProps>
         <div className="section">
           <p>List the boards</p>
-          <APIButtonWithProps message="This is my api button with props" apiFetch={this.multifunctionButton} />
+          <APIButtonWithProps message="This is my api button with props" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
         </div>
         {/* <
