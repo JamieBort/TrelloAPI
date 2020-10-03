@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import APIButtonWithProps from './components/APIButtonWithProps';
 import List from './components/List';
+import ShowHide from './components/ShowHide';
 // import APIButtonWithState from './components/APIButtonWithState';
 
 // const TrelloAPIstring = `https://api.trello.com/1/boards/59eb3c354ef89f2258c24900/cards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
@@ -138,16 +139,21 @@ class App extends React.Component {
   //     .catch((error) => { console.error('Error:', error) });
   // };
 
-  testFunction=()=>{console.log(this.state)};
+  testFunction = () => { console.log(this.state) };
 
   render() {
-    // console.log(this.state);
     return (
       <div className="App">
-      <APIButtonWithProps message="The current state." theFunction={this.testFunction}></APIButtonWithProps>
         <div className="section">
-          <p>List the boards</p>
-          <APIButtonWithProps message="This is my api button with props" theFunction={this.multifunctionButton} />
+          <APIButtonWithProps message="The current state." theFunction={this.testFunction}></APIButtonWithProps>
+        </div>
+        <div className="section">
+          <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
+          <List details={this.state.details}></List>
+        </div>
+        <div className="section">
+          <ShowHide message="Show/Hide" ></ShowHide>
+          <APIButtonWithProps message="Hide the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
         </div>
         {/* <

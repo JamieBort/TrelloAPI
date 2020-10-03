@@ -1,5 +1,11 @@
 # README TrelloAPI
 
+### Status
+Created the ShowHide.js component. 
+But haven't done anything with it yet. 
+I'm in the process of following this [ShowHideComponent](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Frameworks/React/ShowHideComponent) tutorial so that I can use the Showhide component in this app.
+The end goal with this component is to be able to hide the list of Trello Boards after I create that list. Toggle it on and off, if you will.
+
 ### To Do
 1. ~~Generate a React project~~
 2. ~~Set up .env so that I can make api calls without compromising my key when I push files into git.~~
