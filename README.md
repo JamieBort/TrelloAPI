@@ -12,9 +12,12 @@ The end goal with this component is to be able to hide the list of Trello Boards
 Toggle it on and off, if you will.
 
 Currently getting this error:
-`Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.`
+>`Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.`
 
 Might need to back up a few commits.
+
+Also, on this `902b94298b7fbdb1413ec48bb74ba71d79a6934f` commit, 
+>Modified the README.md file. Because I am getting an error. Read that error before commiting anything else.
 
 ### To Do
 1. ~~Generate a React project~~
