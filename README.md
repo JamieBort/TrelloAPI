@@ -33,8 +33,9 @@ Also, on this `902b94298b7fbdb1413ec48bb74ba71d79a6934f` commit,
   d. then via state ? come back to this
 4. then make the api call(s) I am interested in.
 5. Lastly create components for the api call.
-6. list the date of the card further in the future
-7. display cards in a graph such that the independent axis is date, dependent axis is the number of cards for each date.
+6. Implement hide feature so that the card(s) disappears if I select a button.
+7. list the date of the card further in the future
+8. display cards in a graph such that the independent axis is date, dependent axis is the number of cards for each date.
 
 ## Files and Directories
 `.env.development.local` the local environment variables for development.
