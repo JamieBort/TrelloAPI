@@ -38,4 +38,6 @@ Also, on this `902b94298b7fbdb1413ec48bb74ba71d79a6934f` commit,
 `.env` the environment variables. Was redundant. It wasn't originally included. It caused confusion. So I removed it.
 
 ## Resources
-Using [this tutorial](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Frameworks/React/contacts-manager) in order to ultimately list the Boards.
+Using [contacts-manager](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Frameworks/React/contacts-manager) this tutorial in order to ultimately list the Boards.
+
+Using [ShowHideComponent](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Frameworks/React/ShowHideComponent) this tutorial to hide components.
