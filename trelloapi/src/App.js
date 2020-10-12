@@ -19,7 +19,7 @@ class App extends React.Component {
       showHideDemo1: false,
       showHideDemo2: false,
       ShowHide: false,
-      details:[], // used for api call.
+      details: [], // used for api call.
     };
     this.showHideComponentSwitchStatement = this.showHideComponentSwitchStatement.bind(this); // or similar line. *** NOTE: this needs to change. ***
   }
@@ -109,6 +109,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="section">
+          <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
+          {/* <List details={this.state.details}></List> */}
+        </div>
+        <div className="section">
           <APIButtonWithProps message="Show/Hide the ShowHide component Button." theFunction={() => this.showHideComponentSwitchStatement("showHideShowHide")}>
           </APIButtonWithProps>
           <APIButtonWithProps message="Show/Hide First Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo1")}>
@@ -121,14 +125,10 @@ class App extends React.Component {
         </div>
         <div className="section">
           <p>the place for my hiding card.</p>
-          { abcd && <List  details={this.state.details}/>}
+          {abcd && <List details={this.state.details} />}
           {showHideShowHide && <ShowHide />}
           {showHideDemo1 && <Demo1 />}
           {showHideDemo2 && <Demo2 />}
-        </div>
-        <div className="section">
-          <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
-          {/* <List details={this.state.details}></List> */}
         </div>
 
         {/* <div className="section">
