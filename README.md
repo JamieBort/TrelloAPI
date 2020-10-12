@@ -1,6 +1,10 @@
 # README TrelloAPI
 
 ### Status
+Commit 377282f1fef5afb8f56ffbc710752cecb3fa8041
+`Got the show/hide commonents to work.` (it should have said "Got the show/hide components to work.")
+Next, need them to populate if the api call has a response and with the data from the api call
+
 Created the ShowHide.js component.
 
 But haven't done anything with it yet. 
