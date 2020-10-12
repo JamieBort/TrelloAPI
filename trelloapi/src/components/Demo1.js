@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Demo1 extends Component {
-    constructor() { // NOTICE: props is not passed in. TODO: pass props in once this is working as expected.
-        super(); // NOTICE: props is not passed in. TODO: pass props in once this is working as expected.
+    constructor(props) { // NOTICE: props is not passed in. TODO: pass props in once this is working as expected.
+        super(props); // NOTICE: props is not passed in. TODO: pass props in once this is working as expected.
         this.state = {
             name: "react",
         };

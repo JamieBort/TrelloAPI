@@ -5,6 +5,7 @@ import APIButtonWithProps from './components/APIButtonWithProps';
 // import List from './components/List';
 // import ShowHide from './components/ShowHide';
 import Demo1 from './components/Demo1';
+import Demo2 from './components/Demo2';
 // import APIButtonWithState from './components/APIButtonWithState';
 
 // const TrelloAPIstring = `https://api.trello.com/1/boards/59eb3c354ef89f2258c24900/cards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
@@ -17,7 +18,7 @@ class App extends React.Component {
     super(props); // *** why is super crossed out? ***
     this.state = {
       showHideDemo1: false, // 
-      // showHideDemo2: false,
+      showHideDemo2: false,
       // showHideDemo3: false
     };
     this.showHideComponentSwitchStatement = this.showHideComponentSwitchStatement.bind(this); // or similar line. *** NOTE: this needs to change. ***
@@ -34,6 +35,11 @@ class App extends React.Component {
         console.log("trigger true");
         this.setState({ showHideDemo1: !this.state.showHideDemo1 });
         break;
+        case "showHideDemo2":
+          // need to toggle the car on and off.
+          console.log("trigger true");
+          this.setState({ showHideDemo2: !this.state.showHideDemo2 });
+          break;
       default:
         console.log("the default case was used.");
     }
@@ -99,11 +105,13 @@ class App extends React.Component {
   currentStateFunction = () => { console.log("The current state is:", this.state); };
 
   render() {
-    const { showHideDemo1, } = this.state;
+    const { showHideDemo1, showHideDemo2 } = this.state;
     return (
       <div className="App">
         <div className="section">
-          <APIButtonWithProps message="Show/Hide Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo1")}>
+          <APIButtonWithProps message="Show/Hide First Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo1")}>
+          </APIButtonWithProps>
+          <APIButtonWithProps message="Show/Hide Second Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo2")}>
           </APIButtonWithProps>
         </div>
         <div className="section">
@@ -112,6 +120,7 @@ class App extends React.Component {
         <div className="section">
           <p>the place for my hiding card.</p>
           {showHideDemo1 && <Demo1 />}
+          {showHideDemo2 && <Demo2 />}
         </div>
         {/* <div className="section">
           <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
