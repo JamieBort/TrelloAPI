@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import APIButtonWithProps from './components/APIButtonWithProps';
-import List from './components/List';
-import ShowHide from './components/ShowHide';
+// import List from './components/List';
+// import ShowHide from './components/ShowHide';
+import Demo1 from './components/Demo1';
 // import APIButtonWithState from './components/APIButtonWithState';
 
 // const TrelloAPIstring = `https://api.trello.com/1/boards/59eb3c354ef89f2258c24900/cards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
@@ -11,37 +12,33 @@ const AllBoards = `https://api.trello.com/1/members/me/boards?key=` + process.en
 
 // function App() {
 class App extends React.Component {
-// currently missing constructor with state inside
-constructor(props){
-  super(props); // *** why is super crossed out? ***
-  this.state = {
-    details: [],
-  };
-  // this.handleClick = this.handleClick.bind(this); // or similar line. *** NOTE: this needs to change. ***
-}
-
-// also missing switch statement
-showHideComponentSwitchStatement(aVariable){
-  console.log(aVariable);
-  // console.log("hi");
-  // switch statement
-  let x = "x";
-  let y = "y";
-  let v = "v";
-  // let z;
-  let expression = v;
-  switch(expression) {
-    case x:
-      console.log("the expression is: ", expression);
-      break;
-    case y:
-      console.log("the expression is: ", expression);
-      break;
-    default:
-      console.log("the expression is: ", "z");
+  // currently missing constructor with state inside
+  constructor(props) {
+    super(props); // *** why is super crossed out? ***
+    this.state = {
+      showHideDemo1: false, // 
+      // showHideDemo2: false,
+      // showHideDemo3: false
+    };
+    this.showHideComponentSwitchStatement = this.showHideComponentSwitchStatement.bind(this); // or similar line. *** NOTE: this needs to change. ***
   }
-}
-  
+
+  // also missing switch statement
+  showHideComponentSwitchStatement(aVariable) {
+    console.log(aVariable);
+    // console.log("hi");
+    // switch statement
+    switch (aVariable) {
+      case "showHideDemo1":
+        // need to toggle the car on and off.
+        console.log("trigger true");
+        this.setState({ showHideDemo1: !this.state.showHideDemo1 });
+        break;
+      default:
+        console.log("the default case was used.");
+    }
+  }
+
   apiCall = () => {
     axios
       .get(AllBoards)
@@ -99,18 +96,24 @@ showHideComponentSwitchStatement(aVariable){
   //     .catch((error) => { console.error('Error:', error) });
   // };
 
-  currentStateFunction = () => { console.log("The current state is:"); console.log(this.state); };
+  currentStateFunction = () => { console.log("The current state is:", this.state); };
 
   render() {
+    const { showHideDemo1, } = this.state;
     return (
       <div className="App">
         <div className="section">
-          <APIButtonWithProps message="Show/Hide Switch Button." theFunction={this.showHideComponentSwitchStatement}></APIButtonWithProps>
+          <APIButtonWithProps message="Show/Hide Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo1")}>
+          </APIButtonWithProps>
         </div>
         <div className="section">
           <APIButtonWithProps message="The current state." theFunction={this.currentStateFunction}></APIButtonWithProps>
         </div>
         <div className="section">
+          <p>the place for my hiding card.</p>
+          {showHideDemo1 && <Demo1 />}
+        </div>
+        {/* <div className="section">
           <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
         </div>
@@ -118,7 +121,8 @@ showHideComponentSwitchStatement(aVariable){
           <ShowHide message="Show/Hide" ></ShowHide>
           <APIButtonWithProps message="Hide the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
-        </div>
+        </div> */}
+
         {/* <
         < className="section">
           <p>List the description of one of the cards</p>
