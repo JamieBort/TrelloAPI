@@ -1,9 +1,14 @@
 # README TrelloAPI
 
 ### Status
+Commit 4152308302b121df334596dce5e706e94d44c991
+`Modified the trelloapi/src/App.js file. Show/hide is working with the api call.`
+Next need to clean up the file.
+And create a button for the 'Chores' card so that when it is selected a new page loads with all of the Chores cards listed.
+
 Commit 377282f1fef5afb8f56ffbc710752cecb3fa8041
 `Got the show/hide commonents to work.` (it should have said "Got the show/hide components to work.")
-Next, need them to populate if the api call has a response and with the data from the api call
+~~Next, need them to populate if the api call has a response and with the data from the api call.~~
 
 Created the ShowHide.js component.
 
@@ -33,7 +38,7 @@ Also, on this `902b94298b7fbdb1413ec48bb74ba71d79a6934f` commit,
   d. then via state ? come back to this
 4. then make the api call(s) I am interested in.
 5. Lastly create components for the api call.
-6. Implement hide feature so that the card(s) disappears if I select a button.
+6. ~~Implement hide feature so that the card(s) disappears if I select a button.~~
 7. list the date of the card further in the future
 8. display cards in a graph such that the independent axis is date, dependent axis is the number of cards for each date.
 
