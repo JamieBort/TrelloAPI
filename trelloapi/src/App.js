@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import APIButtonWithProps from './components/APIButtonWithProps';
-// import List from './components/List';
-// import ShowHide from './components/ShowHide';
+import List from './components/List';
+import ShowHide from './components/ShowHide';
 import Demo1 from './components/Demo1';
 import Demo2 from './components/Demo2';
 // import APIButtonWithState from './components/APIButtonWithState';
@@ -11,35 +11,30 @@ import Demo2 from './components/Demo2';
 // const TrelloAPIstring = `https://api.trello.com/1/boards/59eb3c354ef89f2258c24900/cards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
 const AllBoards = `https://api.trello.com/1/members/me/boards?key=` + process.env.REACT_APP_KEY + `&token=` + process.env.REACT_APP_TOKEN;
 
-// function App() {
 class App extends React.Component {
-  // currently missing constructor with state inside
   constructor(props) {
     super(props); // *** why is super crossed out? ***
     this.state = {
-      showHideDemo1: false, // 
+      showHideDemo1: false,
       showHideDemo2: false,
-      // showHideDemo3: false
+      ShowHide: false,
+      details:[],
     };
     this.showHideComponentSwitchStatement = this.showHideComponentSwitchStatement.bind(this); // or similar line. *** NOTE: this needs to change. ***
   }
 
-  // also missing switch statement
-  showHideComponentSwitchStatement(aVariable) {
-    console.log(aVariable);
-    // console.log("hi");
-    // switch statement
-    switch (aVariable) {
+  showHideComponentSwitchStatement(switchcase) {
+    console.log(switchcase);
+    switch (switchcase) {
+      case "showHideShowHide":
+        this.setState({ showHideShowHide: !this.state.showHideShowHide });
+        break;
       case "showHideDemo1":
-        // need to toggle the car on and off.
-        console.log("trigger true");
         this.setState({ showHideDemo1: !this.state.showHideDemo1 });
         break;
-        case "showHideDemo2":
-          // need to toggle the car on and off.
-          console.log("trigger true");
-          this.setState({ showHideDemo2: !this.state.showHideDemo2 });
-          break;
+      case "showHideDemo2":
+        this.setState({ showHideDemo2: !this.state.showHideDemo2 });
+        break;
       default:
         console.log("the default case was used.");
     }
@@ -105,10 +100,12 @@ class App extends React.Component {
   currentStateFunction = () => { console.log("The current state is:", this.state); };
 
   render() {
-    const { showHideDemo1, showHideDemo2 } = this.state;
+    const { showHideShowHide, showHideDemo1, showHideDemo2 } = this.state;
     return (
       <div className="App">
         <div className="section">
+          <APIButtonWithProps message="Show/Hide the ShowHide component Button." theFunction={() => this.showHideComponentSwitchStatement("showHideShowHide")}>
+          </APIButtonWithProps>
           <APIButtonWithProps message="Show/Hide First Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo1")}>
           </APIButtonWithProps>
           <APIButtonWithProps message="Show/Hide Second Switch Button." theFunction={() => this.showHideComponentSwitchStatement("showHideDemo2")}>
@@ -119,10 +116,11 @@ class App extends React.Component {
         </div>
         <div className="section">
           <p>the place for my hiding card.</p>
+          {showHideShowHide && <ShowHide />}
           {showHideDemo1 && <Demo1 />}
           {showHideDemo2 && <Demo2 />}
         </div>
-        {/* <div className="section">
+        <div className="section">
           <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
         </div>
@@ -130,7 +128,7 @@ class App extends React.Component {
           <ShowHide message="Show/Hide" ></ShowHide>
           <APIButtonWithProps message="Hide the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
-        </div> */}
+        </div>
 
         {/* <
         < className="section">
