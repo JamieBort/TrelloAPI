@@ -1,7 +1,7 @@
 # README TrelloAPI
 
 ### Status
-Commit 4152308302b121df334596dce5e706e94d44c991
+Commit c39fc3b734c8268ae612a2f902ae9d2dce65af7b
 `Modified the trelloapi/src/App.js file. Show/hide is working with the api call.`
 Next need to clean up the file.
 And create a button for the 'Chores' card so that when it is selected a new page loads with all of the Chores cards listed.
