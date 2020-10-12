@@ -15,10 +15,11 @@ class App extends React.Component {
   constructor(props) {
     super(props); // *** why is super crossed out? ***
     this.state = {
+      abcd: false,
       showHideDemo1: false,
       showHideDemo2: false,
       ShowHide: false,
-      details:[],
+      details:[], // used for api call.
     };
     this.showHideComponentSwitchStatement = this.showHideComponentSwitchStatement.bind(this); // or similar line. *** NOTE: this needs to change. ***
   }
@@ -26,6 +27,9 @@ class App extends React.Component {
   showHideComponentSwitchStatement(switchcase) {
     console.log(switchcase);
     switch (switchcase) {
+      case "abcd":
+        this.setState({ abcd: !this.state.abcd });
+        break;
       case "showHideShowHide":
         this.setState({ showHideShowHide: !this.state.showHideShowHide });
         break;
@@ -78,6 +82,7 @@ class App extends React.Component {
     // console.log(myObj);
     // this.apiCallAllBoards();
     this.apiCall();
+    this.showHideComponentSwitchStatement("abcd");
     // console.log(tempObject);
     // console.log(myObj);
   };
@@ -100,7 +105,7 @@ class App extends React.Component {
   currentStateFunction = () => { console.log("The current state is:", this.state); };
 
   render() {
-    const { showHideShowHide, showHideDemo1, showHideDemo2 } = this.state;
+    const { abcd, showHideShowHide, showHideDemo1, showHideDemo2 } = this.state;
     return (
       <div className="App">
         <div className="section">
@@ -116,19 +121,21 @@ class App extends React.Component {
         </div>
         <div className="section">
           <p>the place for my hiding card.</p>
+          { abcd && <List  details={this.state.details}/>}
           {showHideShowHide && <ShowHide />}
           {showHideDemo1 && <Demo1 />}
           {showHideDemo2 && <Demo2 />}
         </div>
         <div className="section">
           <APIButtonWithProps message="List the boards" theFunction={this.multifunctionButton} />
-          <List details={this.state.details}></List>
+          {/* <List details={this.state.details}></List> */}
         </div>
-        <div className="section">
+
+        {/* <div className="section">
           <ShowHide message="Show/Hide" ></ShowHide>
           <APIButtonWithProps message="Hide the boards" theFunction={this.multifunctionButton} />
           <List details={this.state.details}></List>
-        </div>
+        </div> */}
 
         {/* <
         < className="section">
